@@ -1,4 +1,3 @@
-
 <!-- 1. Pengulangan:
  
     1. for
@@ -10,22 +9,25 @@
 
 <?php
 
-// for ( $i = 0; $i < 10; $i++ ) {
-//     echo "Hello, World! <br>";
-// }
+// FOR
+for ( $i = 0; $i < 10; $i++ ) {
+    echo "Hello, World! <br>";
+}
 
-// $i = 0;
-// while ($i < 10) {
-//     echo "Hello, World! <br>";
-//     $i++;
-// }
+// WHILE
+$i = 0;
+while ($i < 10) {
+    echo "Hello, World! <br>";
+    $i++;
+}
 
 
-// $i = 0;
-// do {
-//     echo "Hello, World! <br>";
-//     $i++;
-// } while ($i < 10);
+// DO WHILE
+$i = 0;
+do {
+    echo "Hello, World! <br>";
+    $i++;
+} while ($i < 10);
 
 ?>
 
@@ -41,28 +43,28 @@
 
         <!-- Cara 1 --> 
         <?php
-            // for ($i = 1; $i <= 5; $i++) { // perulangan untuk baris
-            //     echo "<tr>";
+            for ($i = 1; $i <= 5; $i++) { // perulangan untuk baris
+                echo "<tr>";
 
-            //     for ($j = 1; $j <= 5; $j++) { // perulangan untuk kolom
-            //         echo "<td>$i,$j</td>";
-            //     }
+                for ($j = 1; $j <= 5; $j++) { // perulangan untuk kolom
+                    echo "<td>$i,$j</td>";
+                }
 
-            //     echo "</tr>";
-            // }
+                echo "</tr>";
+            }
         ?> 
 
 
         <!-- Cara 2 -->
-        <?php //for ($i = 1; $i <= 3; $i++) { ?>
+        <?php for ($i = 1; $i <= 3; $i++) { ?>
 
-            <!-- <tr> -->
-                <?php // for ($j = 1; $j <= 4; $j++) { ?>
-                    <!-- <td> <?php // echo "$i, $j" ?> </td> -->
-                <?php // } ?>
-            <!-- </tr> -->
+            <tr>
+                <?php for ($j = 1; $j <= 4; $j++) { ?>
+                    <td> <?php echo "$i, $j" ?> </td>
+                <?php } ?>
+            </tr>
 
-        <?php // } ?>
+        <?php } ?>
 
 
         <!-- Cara 3 -->
