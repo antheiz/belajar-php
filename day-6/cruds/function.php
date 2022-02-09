@@ -9,7 +9,8 @@ $password = "salupa";
 // membuat koneksi
 $db = mysqli_connect($host, $user, $password, $database);
 
-// membuat function untuk get data
+
+// READ
 function query($query) {
     global $db;
     $result = mysqli_query($db, $query);
@@ -20,6 +21,8 @@ function query($query) {
     return $rows;
 }
 
+
+// CREATE
 function addFruids($data) {
     global $db;
 
@@ -35,6 +38,7 @@ function addFruids($data) {
 }
 
 
+// DELETE
 function deleteFruids($id) {
     global $db;
 
@@ -44,6 +48,8 @@ function deleteFruids($id) {
 
 }
 
+
+// UPDATE
 function updateFruids($data) {
     global $db;
 
@@ -57,6 +63,16 @@ function updateFruids($data) {
 
     return mysqli_affected_rows($db);
 
+}
+
+// SEARCH
+function cari($keyword) {
+
+    $query = "SELECT * FROM fruids WHERE 
+        fruid_name LIKE '%$keyword%' OR price LIKE '%$keyword%' OR qty LIKE '%$keyword%'
+    ";
+
+    return query($query);
 }
 
 ?>

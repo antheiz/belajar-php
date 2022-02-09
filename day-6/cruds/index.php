@@ -2,8 +2,13 @@
 // import function
 require 'function.php';
 
-$fruids = query("SELECT * FROM fruids ");
+$fruids = query("SELECT * FROM fruids ORDER BY id DESC");
 
+// kalo tombol cari di klik
+
+if ( isset($_POST["cari"]) ) {
+    $fruids = cari($_POST['keyword']);
+}
 
 ?>
 
@@ -14,11 +19,22 @@ $fruids = query("SELECT * FROM fruids ");
     <title>PHP MySQL</title>
 </head>
 <body>
-    <h1>List Fruids</h1>
+    <h1><a href="index.php" style="color:#000;text-decoration: none;">List Fruids</a></h1>
 
     <a href="create.php">+ Add new Fruids</a>
 
     <br><br>
+
+    <form action="" method="post">
+
+        <input type="text" name="keyword" size="15" autofocus placeholder="ketik yang ingin dicari" autocomplete="off"> 
+
+        <button type="submit" name="cari">Cari</button>
+
+    </form>
+
+    <br>
+    
 
     <table border="1", cellpadding="10", cellspacing="0">
         <tr>
